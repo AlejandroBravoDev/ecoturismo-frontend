@@ -7,7 +7,7 @@ import placeholderFotoUsuario from "../../assets/usuarioDemo.png";
 import bannerFondo from "../../assets/img4.jpg";
 import { FaHeart, FaMapMarkerAlt, FaStar, FaTrashAlt } from "react-icons/fa";
 
-const API_BASE = "http://localhost:8000";
+const API = import.meta.env.VITE_API_URL;;
 
 function PerfilUsuario() {
   const [usuario, setUsuario] = useState(() => {

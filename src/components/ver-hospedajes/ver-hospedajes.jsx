@@ -23,7 +23,7 @@ import { MdAddPhotoAlternate } from "react-icons/md";
 import Swal from "sweetalert2";
 import noImagen from "../../assets/noImage.jpg";
 
-const API = "http://localhost:8000";
+const API = import.meta.env.VITE_API_URL;
 const defaultImageUrls = [imgMeerkat, imgLion, imgParrot];
 
 const CommentActionsBlock = React.memo(

@@ -27,7 +27,7 @@ function CrearUniversal() {
     const fetchMunicipios = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/municipios",
+          import.meta.env.VITE_API_URL + "/api/municipios",
         );
         setMunicipios(
           Array.isArray(response.data.data) ? response.data.data : [],
@@ -59,9 +59,9 @@ function CrearUniversal() {
      ENDPOINTS
   ========================= */
   const endpoints = {
-    lugar: "http://localhost:8000/api/lugares",
-    hospedaje: "http://localhost:8000/api/hospedajes",
-    usuario: "http://localhost:8000/api/usuarios",
+    lugar: import.meta.env.VITE_API_URL + "/api/lugares",
+    hospedaje: import.meta.env.VITE_API_URL + "/api/hospedajes",
+    usuario: import.meta.env.VITE_API_URL + "/api/usuarios",
   };
 
   /* =========================
