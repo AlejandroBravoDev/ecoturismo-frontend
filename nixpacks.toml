@@ -1,0 +1,11 @@
+[phases.setup]
+cmds = ["cd React"]
+
+[phases.install]
+cmds = ["cd React && npm install"]
+
+[phases.build]
+cmds = ["cd React && npm run build"]
+
+[start]
+cmd = "cd React && npx serve dist -s -l 3000"
