@@ -33,10 +33,10 @@ function Rutas() {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />
 
-      <Route path="/lugares" element={<Lugares />} />
-      <Route path="/lugares/:id" element={<VerLugares />} />
-      <Route path="/hospedajes" element={<HospedajesPage />} />
-      <Route path="/hospedajes/:id" element={<VerHospedajes />} />
+      <Route path="/api/lugares" element={<Lugares />} />
+      <Route path="/api/lugares/:id" element={<VerLugares />} />
+      <Route path="/api/hospedajes" element={<HospedajesPage />} />
+      <Route path="/api/hospedajes/:id" element={<VerHospedajes />} />
 
       <Route path="/ofrecemos" element={<QueOfrecemosPage />} />
       <Route path="/preguntasFrecuentes" element={<FaqEcoturismoPage />} />
