@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import defaultAvatar from "../assets/img4.jpg";
-import noImage from "../assets/noImage.jpg";
+import noImage from "../assets/noImage.webp";
 
 const AdminUsers = () => {
   const navigate = useNavigate();

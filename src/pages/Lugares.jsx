@@ -6,7 +6,7 @@ import Footer from "../components/footer";
 import SearchBar from "../components/Lugares/SearchBar";
 import Cards from "../components/Lugares/Cards";
 import AvisoEliminar from "../components/adminActions/avisoEliminar";
-import fondoLugares from "../assets/portadaProyecto.jpg";
+import fondoLugares from "../assets/portadaProyecto.webp";
 import ScrollToTop from "../components/ScrollToTop";
 
 function Lugares() {

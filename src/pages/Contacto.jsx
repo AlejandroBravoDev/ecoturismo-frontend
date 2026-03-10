@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import fondoContacto from "../assets/portadaProyecto3.jpg";
+import fondoContacto from "../assets/portadaProyecto3.webp";
 
 const containerVariants = {
   hidden: { opacity: 0 },

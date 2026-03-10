@@ -1,7 +1,7 @@
 import adminStyles from "./admin.module.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
-import img1 from "../../assets/img1.jpg";
+import img1 from "../../assets/img1.webp";
 
 function CardsAdmin() {
   return (

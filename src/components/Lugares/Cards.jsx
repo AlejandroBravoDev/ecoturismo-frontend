@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import defaultImage from "../../assets/img6.jpg";
-import noImagen from "../../assets/noImage.jpg";
+import defaultImage from "../../assets/img6.webp";
+import noImagen from "../../assets/noImage.webp";
 import { Star, Leaf, MapPin, ChevronRight, Plus } from "lucide-react";
 
 const Cards = React.memo(({ lugares: lugaresProps = [], user, onDelete }) => {

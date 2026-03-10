@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import api from "../../services/api";
 import styles from "./Registro.module.css";
-import img1 from "../../assets/img1.jpg";
-import img2 from "../../assets/img2.jpg";
-import img3 from "../../assets/img3.jpg";
-import img4 from "../../assets/img4.jpg";
-import img5 from "../../assets/img5.jpg";
-import img6 from "../../assets/img6.jpg";
+import img1 from "../../assets/img1.webp";
+import img2 from "../../assets/img2.webp";
+import img3 from "../../assets/img3.webp";
+import img4 from "../../assets/img4.webp";
+import img5 from "../../assets/img5.webp";
+import img6 from "../../assets/img6.webp";
 import { useNavigate } from "react-router-dom";
 
 function Registro() {
@@ -43,10 +43,18 @@ function Registro() {
 
     // Validar extensiones mal escritas
     const invalidExtensions = [
-      ".comm", ".coom", ".gmial", ".gmai", ".hotmial", 
-      ".outlok", ".yahooo", ".gmil", ".hotmai", ".con"
+      ".comm",
+      ".coom",
+      ".gmial",
+      ".gmai",
+      ".hotmial",
+      ".outlok",
+      ".yahooo",
+      ".gmil",
+      ".hotmai",
+      ".con",
     ];
-    
+
     for (const ext of invalidExtensions) {
       if (email.toLowerCase().endsWith(ext)) {
         return "Extensión de correo mal escrita. Usa .com, .net, .org";
@@ -54,7 +62,8 @@ function Registro() {
     }
 
     // Validar formato general
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.(com|net|org|edu|gov|co|mx|es|ar|cl|pe|ve)$/;
+    const emailRegex =
+      /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.(com|net|org|edu|gov|co|mx|es|ar|cl|pe|ve)$/;
     if (!emailRegex.test(email)) {
       return "Formato de correo incorrecto. Usa extensiones válidas como .com, .net, .org";
     }
@@ -64,7 +73,7 @@ function Registro() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    
+
     setFormData({
       ...formData,
       [name]: value,
@@ -130,9 +139,7 @@ function Registro() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) =>
-        prev === totalImages - 1 ? 0 : prev + 1
-      );
+      setCurrentIndex((prev) => (prev === totalImages - 1 ? 0 : prev + 1));
     }, 4000);
 
     return () => clearInterval(interval);
@@ -163,9 +170,7 @@ function Registro() {
               required
               className={emailError ? styles.inputError : ""}
             />
-            {emailError && (
-              <p className={styles.errorText}>{emailError}</p>
-            )}
+            {emailError && <p className={styles.errorText}>{emailError}</p>}
 
             <label>Contraseña</label>
             <input

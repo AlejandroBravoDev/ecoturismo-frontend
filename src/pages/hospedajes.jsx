@@ -6,7 +6,7 @@ import Footer from "../components/footer";
 import SearchBar from "../components/Hospedajes/SearchBar";
 import Cards from "../components/Hospedajes/Cards";
 import AvisoEliminar from "../components/adminActions/avisoEliminar";
-import fondoHospedajes from "../assets/destinosDestacados3.jpg";
+import fondoHospedajes from "../assets/destinosDestacados3.webp";
 import ScrollToTop from "../components/ScrollToTop";
 
 function Hospedajes() {

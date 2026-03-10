@@ -13,8 +13,8 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 
 // Activos del proyecto
-import fotoHero from "../assets/portadaProyecto.jpg";
-import fotoBio from "../assets/destinosDestacados2.jpg";
+import fotoHero from "../assets/portadaProyecto.webp";
+import fotoBio from "../assets/destinosDestacados2.webp";
 
 // Variantes de animación optimizadas
 const fadeInUp = {

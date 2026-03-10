@@ -3,9 +3,9 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import ScrollToTop from "../components/ScrollToTop";
 import { Link } from "react-router-dom";
-import portada from "../assets/destinosDestacados1.jpg";
-import geolocalizacion from "../assets/geolocalizacion.jpg";
-import sistemaValoracion from "../assets/sistemaValoracion.jpg";
+import portada from "../assets/destinosDestacados1.webp";
+import geolocalizacion from "../assets/geolocalizacion.webp";
+import sistemaValoracion from "../assets/sistemaValoracion.webp";
 
 function QueOfrecemosPage() {
   const servicios = [

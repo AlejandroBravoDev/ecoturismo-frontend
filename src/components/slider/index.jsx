@@ -1,9 +1,9 @@
 import styles from "./slider.module.css";
-import img1 from "../../assets/img1.jpg";
-import img2 from "../../assets/img2.jpg";
-import img3 from "../../assets/img3.jpg";
-import img4 from "../../assets/img4.jpg";
-import img5 from "../../assets/img5.jpg";
+import img1 from "../../assets/img1.webp";
+import img2 from "../../assets/img2.webp";
+import img3 from "../../assets/img3.webp";
+import img4 from "../../assets/img4.webp";
+import img5 from "../../assets/img5.webp";
 import { Link, useNavigate } from "react-router-dom";
 
 const sliderData = [

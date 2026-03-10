@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import styles from "./HomeHospedajes.module.css";
-import img3 from "../../assets/img3.jpg";
-import img4 from "../../assets/img4.jpg";
-import img5 from "../../assets/img5.jpg";
+import img3 from "../../assets/img3.webp";
+import img4 from "../../assets/img4.webp";
+import img5 from "../../assets/img5.webp";
 
 // --- 1. DATOS DEL SLIDER ---
 const hospedajesData = [

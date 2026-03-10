@@ -11,10 +11,8 @@ import {
   LayoutDashboard,
   Users,
 } from "lucide-react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.webp";
 import usuarioDemo from "../../assets/usuarioDemo.png";
-
-
 
 function Header() {
   const navigate = useNavigate();

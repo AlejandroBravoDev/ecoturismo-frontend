@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 import placeholderFotoUsuario from "../../assets/usuarioDemo.png";
-import bannerFondo from "../../assets/img4.jpg";
+import bannerFondo from "../../assets/img4.webp";
 import { FaHeart, FaMapMarkerAlt, FaStar, FaTrashAlt } from "react-icons/fa";
 
-const API = import.meta.env.VITE_API_URL;;
+const API = import.meta.env.VITE_API_URL;
 
 function PerfilUsuario() {
   const [usuario, setUsuario] = useState(() => {

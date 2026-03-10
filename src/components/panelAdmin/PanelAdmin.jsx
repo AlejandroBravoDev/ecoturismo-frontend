@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import imgHospedajes from "../../assets/img4.jpg";
-import imgLugares from "../../assets/img1.jpg";
-import imgUsuarios from "../../assets/img6.jpg";
+import imgHospedajes from "../../assets/img4.webp";
+import imgLugares from "../../assets/img1.webp";
+import imgUsuarios from "../../assets/img6.webp";
 import Header from "../header";
 import Footer from "../footer";
 

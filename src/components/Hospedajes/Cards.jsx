@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import noImagen from "../../assets/noImage.jpg";
+import noImagen from "../../assets/noImage.webp";
 import { ChevronRight, MapPin, BedDouble, Plus } from "lucide-react";
 
 const Cards = React.memo(

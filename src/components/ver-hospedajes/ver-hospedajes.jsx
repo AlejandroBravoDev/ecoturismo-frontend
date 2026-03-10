@@ -4,9 +4,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import styles from "./VerHospedaje.module.css";
 import Header from "../header";
 import Footer from "../footer";
-import imgMeerkat from "../../assets/img4.jpg";
-import imgLion from "../../assets/img6.jpg";
-import imgParrot from "../../assets/img1.jpg";
+import imgMeerkat from "../../assets/img4.webp";
+import imgLion from "../../assets/img6.webp";
+import imgParrot from "../../assets/img1.webp";
 import Mapa from "../mapa/map";
 import ScrollToTop from "../ScrollToTop";
 import Filter from "../../utils/profanity";
@@ -21,7 +21,7 @@ import {
 } from "react-icons/fa";
 import { MdAddPhotoAlternate } from "react-icons/md";
 import Swal from "sweetalert2";
-import noImagen from "../../assets/noImage.jpg";
+import noImagen from "../../assets/noImage.webp";
 
 const API = import.meta.env.VITE_API_URL;
 const defaultImageUrls = [imgMeerkat, imgLion, imgParrot];

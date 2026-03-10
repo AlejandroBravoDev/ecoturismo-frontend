@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { motion } from "framer-motion";
 
-import fondoPrincipal from "../assets/portadaProyecto.jpg";
-import fondoPrincipal3 from "../assets/portadaProyecto3.jpg";
-import destacados1 from "../assets/destinosDestacados1.jpg";
-import destacados2 from "../assets/destinosDestacados2.jpg";
-import destacados3 from "../assets/destinosDestacados3.jpg";
-import destacados4 from "../assets/imagenDemo.jpg";
+import fondoPrincipal from "../assets/portadaProyecto.webp";
+import fondoPrincipal3 from "../assets/portadaProyecto3.webp";
+import destacados1 from "../assets/destinosDestacados1.webp";
+import destacados2 from "../assets/destinosDestacados2.webp";
+import destacados3 from "../assets/destinosDestacados3.webp";
+import destacados4 from "../assets/imagenDemo.webp";
 
 import {
   ArrowRight,
@@ -59,7 +59,9 @@ function App() {
     const fetchTopDestinations = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(import.meta.env.VITE_API_URL + "/lugares");
+        const response = await axios.get(
+          import.meta.env.VITE_API_URL + "/lugares",
+        );
         if (isMounted) {
           const procesados = response.data.map((lugar) => {
             const comentarios = lugar.comentarios || [];

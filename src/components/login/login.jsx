@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import api from "../../services/api";
 import styles from "./Login.module.css";
 import { useNavigate, Link } from "react-router-dom";
-import img1 from "../../assets/img1.jpg";
-import img2 from "../../assets/img2.jpg";
-import img3 from "../../assets/img3.jpg";
-import img4 from "../../assets/img4.jpg";
-import img5 from "../../assets/img5.jpg";
-import img6 from "../../assets/img6.jpg";
+import img1 from "../../assets/img1.webp";
+import img2 from "../../assets/img2.webp";
+import img3 from "../../assets/img3.webp";
+import img4 from "../../assets/img4.webp";
+import img5 from "../../assets/img5.webp";
+import img6 from "../../assets/img6.webp";
 
 function Login() {
   const [formData, setFormData] = useState({
