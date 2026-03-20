@@ -48,7 +48,6 @@ function PerfilUsuario() {
       const userData = res.data.usuario;
       setUsuario(userData);
       localStorage.setItem("usuario_perfil_cache", JSON.stringify(userData));
-
       setFormData({
         nombre_completo: userData.nombre_completo || "",
         email: userData.email || "",
@@ -162,7 +161,7 @@ function PerfilUsuario() {
 
     localStorage.removeItem("token");
     localStorage.removeItem("usuario_perfil_cache");
-    navigate("/login");
+    navigate("/");
   };
 
   const handleDeleteOpinion = async (comentarioId) => {
@@ -203,13 +202,13 @@ function PerfilUsuario() {
 
   const handleRemoveFavorite = async (lugarId) => {
     const token = localStorage.getItem("token");
-    if (!token) {
+    if (!token) { 
       navigate("/login");
       return;
     }
 
     try {
-      await axios.delete(`${API_BASE}/afavoritos/${lugarId}`, {
+      await axios.delete(`${API}/favoritos/${lugarId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

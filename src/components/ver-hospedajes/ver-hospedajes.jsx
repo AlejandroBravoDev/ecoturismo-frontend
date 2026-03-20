@@ -167,6 +167,7 @@ function VerHospedaje() {
           headers: { Authorization: `Bearer ${token}` },
         });
         setIsFavorite(response.data.isFavorite);
+        console.log(isFavorite);
       } catch (err) {
         console.error("Error al verificar favorito:", err);
       }
@@ -175,11 +176,19 @@ function VerHospedaje() {
 
   const handleSubmit = async () => {
     if (!comment || comment.trim() === "") {
-      alert("El comentario no puede estar vacío.");
+      Swal.fire({
+        title: "no se puede publicar tú comentario",
+        text: "Tú comentario está vacío",
+        icon: "error",
+      });
       return;
     }
     if (Filter.check(comment)) {
-      alert("¡Tú comentario tiene lenguaje inapropiado!");
+      Swal.fire({
+        title: "no se puede publicar tú comentario",
+        text: "Tú comentario tiene lenguaje inapropiado",
+        icon: "error",
+      });
       return;
     }
     const token = localStorage.getItem("token");
@@ -188,7 +197,11 @@ function VerHospedaje() {
       return;
     }
     if (rating === 0) {
-      alert("Por favor, selecciona una calificación.");
+      Swal.fire({
+        title: "no se puede publicar tú comentario",
+        text: "Por favor dale una calificación al lugar",
+        icon: "error",
+      });
       return;
     }
 
@@ -239,6 +252,10 @@ function VerHospedaje() {
           headers: { Authorization: `Bearer ${token}` },
         });
         setIsFavorite(false);
+        Swal.fire({
+          title: "Hospedaje eliminado de favoritos",
+          icon: "success",
+        });
       } else {
         await axios.post(
           `${API}/favoritos`,
@@ -248,6 +265,10 @@ function VerHospedaje() {
           },
         );
         setIsFavorite(true);
+        Swal.fire({
+          title: "Hospedaje agregado a favoritos",
+          icon: "success",
+        });
       }
     } catch (err) {
       console.error("Error al manejar favorito:", err);

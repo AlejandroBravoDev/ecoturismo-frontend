@@ -241,6 +241,10 @@ function VerLugares() {
           headers: { Authorization: `Bearer ${token}` },
         });
         setIsFavorite(false);
+        Swal.fire({
+          title: "Lugar eliminado de favoritos",
+          icon: "success",
+        });
       } else {
         await axios.post(
           `${API}/favoritos`,
@@ -248,6 +252,11 @@ function VerLugares() {
           { headers: { Authorization: `Bearer ${token}` } },
         );
         setIsFavorite(true);
+
+        Swal.fire({
+          title: "Lugar agregado a favoritos",
+          icon: "success",
+        });
       }
     } catch (err) {
       Swal.fire({ title: "Error al actualizar favoritos.", icon: "error" });
