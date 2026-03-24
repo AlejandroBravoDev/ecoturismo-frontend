@@ -1,14 +1,18 @@
 import { useState } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const ResetPassword = () => {
   const API = import.meta.env.VITE_API_URL;
-  const [searchParams] = useSearchParams();
-  const navigate = useNavigate();
   
-  const token = searchParams.get('token');
+  // 1. Extraemos el token directamente de la ruta (/reset-password/:token)
+  const { token } = useParams();
+  
+  // 2. Extraemos el email de los parámetros de búsqueda (?email=...)
+  const [searchParams] = useSearchParams();
   const email = searchParams.get('email');
+
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     password: '',
@@ -33,6 +37,7 @@ const ResetPassword = () => {
     setLoading(true);
 
     try {
+      // 3. Ya enviamos correctamente el token y el email en la petición
       const response = await axios.post(`${API}/reset-password`, {
         token: token,
         email: email,
@@ -62,9 +67,9 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        <div>
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 ">
+      <div className="max-w-md w-full space-y-8 flex flex-col items-center justify-center gap-10">
+        <div className="flex flex-col items-center justify-center gap-5">
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Restablecer contraseña
           </h2>
@@ -73,8 +78,8 @@ const ResetPassword = () => {
           </p>
         </div>
 
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          <div className="rounded-md shadow-sm -space-y-px">
+        <form className="mt-8 space-y-6 w-full flex flex-col gap-5" onSubmit={handleSubmit}>
+          <div className="rounded-md shadow-sm -space-y-px w-full flex flex-col  gap-5 p-10">
             <div>
               <label htmlFor="password" className="sr-only">
                 Nueva contraseña
@@ -84,7 +89,7 @@ const ResetPassword = () => {
                 name="password"
                 type="password"
                 required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
+                className="w-full appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
                 placeholder="Nueva contraseña"
                 value={formData.password}
                 onChange={handleChange}

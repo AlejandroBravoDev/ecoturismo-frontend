@@ -31,7 +31,7 @@ function Rutas() {
       <Route path="/registro" element={<Registro />} />
       <Route path="/login" element={<Login />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
-      <Route path="/reset-password" element={<ResetPassword />} />
+      <Route path="/reset-password/:token" element={<ResetPassword />} />
 
       <Route path="/lugares" element={<Lugares />} />
       <Route path="/lugares/:id" element={<VerLugares />} />
