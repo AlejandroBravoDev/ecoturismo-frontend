@@ -4,39 +4,37 @@ import "leaflet/dist/leaflet.css";
 import styles from "./mapaOverlay.module.css";
 import L from "leaflet";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { renderToStaticMarkup } from "react-dom/server";
 
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
-  iconUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-  shadowUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
-});
+const createCustomIcon = () => {
+  const iconMarkup = renderToStaticMarkup(
+    <div
+      style={{
+        color: "#20A217",
+        fontSize: "30px",
+        filter: "drop-shadow(0px 0px 2px white)",
+      }}
+    >
+      <FaMapMarkerAlt />
+    </div>,
+  );
+
+  return new L.DivIcon({
+    html: iconMarkup,
+    className: "custom-leaflet-marker",
+    iconSize: [30, 42],
+    iconAnchor: [15, 30],
+    popupAnchor: [0, -30],
+  });
+};
+
+const GreenIcon = createCustomIcon();
 
 const RISARALDA_CENTER = [4.815, -75.69];
 const RISARALDA_BOUNDS = [
   [2.0, -78.0],
   [8.0, -74.0],
 ];
-
-const GreenIcon = new L.DivIcon({
-  html: `
-    <div style="display: flex; justify-content: center; align-items: center; background: transparent;">
-      <svg width="30" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" 
-              fill="#20A217" 
-              stroke="#ffffff" 
-              stroke-width="1.5"/>
-        <circle cx="12" cy="9" r="3.5" fill="#ffffff"/>
-      </svg>
-    </div>`,
-  className: "custom-leaflet-marker",
-  iconSize: [30, 42],
-  iconAnchor: [15, 42],
-  popupAnchor: [0, -40],
-});
 
 const truncateText = (text, maxLength) => {
   if (!text) return "Sin descripción.";
@@ -47,15 +45,16 @@ function MapController({ targetPlace, setTargetPlace }) {
   const map = useMap();
 
   React.useEffect(() => {
+    setTimeout(() => {
+      map.invalidateSize();
+    }, 250);
+
     if (targetPlace && targetPlace.latitud && targetPlace.longitud) {
       map.flyTo(
         [Number(targetPlace.latitud), Number(targetPlace.longitud)],
         14,
-        {
-          duration: 1.5,
-        },
+        { duration: 1.5 },
       );
-
       const timer = setTimeout(() => setTargetPlace(null), 1500);
       return () => clearTimeout(timer);
     }
@@ -65,9 +64,6 @@ function MapController({ targetPlace, setTargetPlace }) {
 }
 
 function MapaRisaralda({ sitiosRisaralda, targetPlace, setTargetPlace }) {
-  const position = RISARALDA_CENTER;
-  const zoomLevel = 9;
-
   if (!sitiosRisaralda || sitiosRisaralda.length === 0) {
     return <div className={styles.loading}>Esperando datos de lugares...</div>;
   }
@@ -75,13 +71,14 @@ function MapaRisaralda({ sitiosRisaralda, targetPlace, setTargetPlace }) {
   return (
     <div className={styles.mapWrapper}>
       <MapContainer
-        center={position}
-        zoom={zoomLevel}
+        center={RISARALDA_CENTER}
+        zoom={9}
         scrollWheelZoom={true}
         maxBounds={RISARALDA_BOUNDS}
         minZoom={8}
         maxZoom={18}
         className={styles.mapContainer}
+        style={{ height: "100%", width: "100%" }}
       >
         <MapController
           targetPlace={targetPlace}
@@ -89,7 +86,7 @@ function MapaRisaralda({ sitiosRisaralda, targetPlace, setTargetPlace }) {
         />
 
         <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          attribution="&copy; OpenStreetMap"
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
