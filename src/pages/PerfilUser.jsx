@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "../components/header";
-import Footer from "../components/footer";
+import Header from "../components/header/index.jsx";
+import Footer from "../components/footer/index.jsx";
 import PerfilUsuario from "../components/PerfilUser/index.jsx";
-import useAuthRedirect from "../hooks/useAuthRedirect";
+import useAuthRedirect from "../hooks/useAuthRedirect.jsx";
 import ScrollToTop from "../components/ScrollToTop.jsx";
 
 function PerfilUser() {

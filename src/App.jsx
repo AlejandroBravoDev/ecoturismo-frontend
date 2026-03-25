@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 /* Importaciones de componentes */
 import VerHospedajes from "./components/ver-hospedajes/ver-hospedajes.jsx";
 import Login from "./components/login/login.jsx";
-import ForgotPassword from "./components/login/ForgotPassword";
+import ForgotPassword from "./components/login/ForgotPassword.jsx";
 import Header from "./components/header/index.jsx";
 
 /* Importaciones de paginas */
@@ -16,8 +16,8 @@ import PerfilUser from "./pages/PerfilUser.jsx";
 import Lugares from "./pages/Lugares.jsx";
 import VerLugares from "./pages/verLugares.jsx";
 import Editar from "./pages/AdminEditar.jsx";
-import AdminCrearPage from "./pages/AdminCrear";
-import ResetPassword from "./pages/ResetPassword";
+import AdminCrearPage from "./pages/AdminCrear.jsx";
+import ResetPassword from "./pages/ResetPassword.jsx";
 import QueOfrecemosPage from "./pages/QueOfrecemosPage.jsx";
 import FaqEcoturismoPage from "./pages/preguntasFrecuentes.jsx";
 import HospedajesPage from "./pages/hospedajes.jsx";
