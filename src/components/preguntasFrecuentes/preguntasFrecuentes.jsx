@@ -61,12 +61,12 @@ export default function FaqEcoturismo() {
   };
 
   return (
-    <div className="w-full mx-auto p-40 flex flex-col gap-10">
-      <h2 className="text-3xl font-bold text-center mb-6 text-green-700">
+    <div className="w-full mx-auto p-6 sm:p-12 md:p-20 lg:p-40 flex flex-col gap-6 md:gap-10">
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-green-700">
         Preguntas Frecuentes
       </h2>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-3 md:gap-2">
         {faqs.map((faq, index) => (
           <div
             key={index}
@@ -74,7 +74,7 @@ export default function FaqEcoturismo() {
           >
             <button
               onClick={() => toggleFAQ(index)}
-              className="w-full flex justify-between items-center p-4 text-left font-medium text-green-800 hover:bg-green-50 transition"
+              className="w-full flex justify-between items-center p-4 text-left font-medium text-sm sm:text-base text-green-800 hover:bg-green-50 transition gap-4"
             >
               <span>{faq.question}</span>
               <span
@@ -89,11 +89,11 @@ export default function FaqEcoturismo() {
             <div
               className={`overflow-hidden transition-all duration-300 ease-in-out px-4 ${
                 activeIndex === index
-                  ? "max-h-40 opacity-100 pb-4"
+                  ? "max-h-96 opacity-100 pb-4"
                   : "max-h-0 opacity-0"
               }`}
             >
-              <p className="text-gray-700">{faq.answer}</p>
+              <p className="text-sm sm:text-base text-gray-700">{faq.answer}</p>
             </div>
           </div>
         ))}
