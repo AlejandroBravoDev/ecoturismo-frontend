@@ -10,7 +10,6 @@ import fondoHospedajes from "../assets/destinosDestacados3.webp";
 import ScrollToTop from "../components/ScrollToTop";
 
 function Hospedajes() {
-  useAuthRedirect();
 
   const {
     hospedajes,
