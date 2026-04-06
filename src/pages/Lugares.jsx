@@ -1,5 +1,4 @@
 import React from "react";
-import useAuthRedirect from "../hooks/useAuthRedirect";
 import useLugares from "../hooks/useLugares";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -10,7 +9,6 @@ import fondoLugares from "../assets/portadaProyecto.webp";
 import ScrollToTop from "../components/ScrollToTop";
 
 function Lugares() {
-  useAuthRedirect();
   const {
     lugares,
     municipios,
@@ -39,7 +37,7 @@ function Lugares() {
               className="w-full h-full object-cover scale-110 animate-pulse-slow"
               alt="Fondo Risaralda"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-white"></div>
+            <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-white"></div>
           </div>
 
           <div className="relative z-10 text-center px-6 animate-fade-in-up">
